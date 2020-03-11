@@ -311,7 +311,7 @@ namespace RiotAPI
 
     public partial class Client
     {
-        public MatchDto GetMatches(string matchId)
+        public MatchDto GetMatches(long matchId)
         {
             var url = "/lol/match/v4/matches/";
             return JsonSerializer.Deserialize<MatchDto>(request(url + matchId));
@@ -323,7 +323,7 @@ namespace RiotAPI
             return JsonSerializer.Deserialize<MatchlistDto>(request(url + encryptedAccountId));
         }
 
-        public MatchTimelineDto GetTimelinesByMatch(string matchId)
+        public MatchTimelineDto GetTimelinesByMatch(long matchId)
         {
             var url = "/lol/match/v4/timelines/by-match/";
             return JsonSerializer.Deserialize<MatchTimelineDto>(request(url + matchId));

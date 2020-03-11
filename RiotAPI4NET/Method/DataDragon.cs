@@ -11,9 +11,9 @@ namespace RiotAPI
             return JsonSerializer.Deserialize<List<string>>(requestWithoutKEY("https://ddragon.leagueoflegends.com/api/versions.json"));
         }
 
-        public static string getChampions(string patch)
+        public static Champions getChampions(string patch)
         {
-            return requestWithoutKEY("http://ddragon.leagueoflegends.com/cdn/" + patch + "/data/en_US/champion.json");
+            return JsonSerializer.Deserialize<Champions>(requestWithoutKEY("http://ddragon.leagueoflegends.com/cdn/" + patch + "/data/en_US/champion.json"));
         }
 
         private static string requestWithoutKEY(string url)

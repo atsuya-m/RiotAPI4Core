@@ -316,6 +316,11 @@ namespace RiotAPI
             var url = "/lol/match/v4/matches/";
             return JsonSerializer.Deserialize<MatchDto>(request(url + matchId));
         }
+        public List<long> GetMatchIDsByTournamentCode(string tournamentCode)
+        {
+            var url = "/lol/match/v4/matches/by-tournament-code/";
+            return JsonSerializer.Deserialize<List<long>>(request(url + tournamentCode + "ids"));
+        }
 
         public MatchlistDto GetMatchlistsByAccountID(string encryptedAccountId)
         {
